@@ -12,14 +12,16 @@
 
 <p>
   <b>Image url:</b>
-  <%= @product.image_url %>
+  <%=  @product.image_url %>
+</p>
+<p>
+  <%= image_tag @product.image_url, :height => 100 %>
 </p>
 
 <p>
   <b>Price:</b>
   <%= @product.price %>
 </p>
-
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
