@@ -4,16 +4,6 @@ class ProductTest < ActiveSupport::TestCase
 
   fixtures :products
 
-  # setup a test product, defined in one place
-  def new_product
-    Product.new(
-      title: "test title",
-      description: "test description",
-      image_url: "test.jpg",
-      price: 14.99
-    )
-  end
-
   test "product attributes must not be empty" do
     product = Product.new
     assert product.invalid?
@@ -23,29 +13,35 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:image_url].any?
   end
 
+  test "product title must be at least 10 characters in length" do
+    product = products(:ruby)
+    product.title = '2short'
+    assert product.invalid?
+  end
+
   test "product price must not be negative" do
-    product       = new_product
+    product       = products(:ruby)
     product.price = -1
     assert product.invalid?
     assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
   end
 
   test "product price must not be zero" do
-    product       = new_product
+    product       = products(:ruby)
     product.price = 0
     assert product.invalid?
     assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
   end
 
   test "product price must be positive" do
-    product       = new_product
+    product       = products(:ruby)
     product.price = 1
     assert product.valid?
   end
 
   test "image url must be a valid gif, jpg, or png" do
 
-    product = new_product
+    product = products(:ruby)
     ok      = %w{ test.gif test.jpg test.png TEST.JPG TEST.Jpg http://a.b.c/x/y/z/test.gif }
     bad     = %w{ test.doc test.gif/more test.gif.more }
 

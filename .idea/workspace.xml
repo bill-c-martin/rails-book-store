@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bb6700b-efdd-44e1-b55c-1aa12300d8c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/product.rb" afterPath="$PROJECT_DIR$/app/models/product.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products/show.html.erb" afterPath="$PROJECT_DIR$/app/views/products/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/products.yml" afterPath="$PROJECT_DIR$/test/fixtures/products.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/products_controller_test.rb" afterPath="$PROJECT_DIR$/test/functional/products_controller_test.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/unit/product_test.rb" afterPath="$PROJECT_DIR$/test/unit/product_test.rb" />
     </list>
     <ignored path="depot.iws" />
@@ -31,7 +25,16 @@
       <file leaf-file-name="product_test.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/unit/product_test.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="68" selection-start="1932" selection-end="1932" vertical-scroll-proportion="0.8807947">
+            <state line="18" column="27" selection-start="519" selection-end="519" vertical-scroll-proportion="0.3576159">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/product.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="36" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -56,6 +59,7 @@
       <list>
         <option value="$PROJECT_DIR$/app/views/products/show.html.erb" />
         <option value="$PROJECT_DIR$/test/fixtures/products.yml" />
+        <option value="$PROJECT_DIR$/app/models/product.rb" />
         <option value="$PROJECT_DIR$/test/unit/product_test.rb" />
       </list>
     </option>
@@ -402,7 +406,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="48" selection-start="143" selection-end="143" vertical-scroll-proportion="0.059602648">
+        <state line="4" column="36" selection-start="192" selection-end="192" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -416,7 +420,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/product_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="68" selection-start="1932" selection-end="1932" vertical-scroll-proportion="0.8807947">
+        <state line="18" column="27" selection-start="519" selection-end="519" vertical-scroll-proportion="0.3576159">
           <folding />
         </state>
       </provider>
