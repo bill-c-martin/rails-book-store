@@ -4,11 +4,16 @@
 .products {
   table {
     border-collapse: collapse;
-  }
 
-  table tr td {
-    padding:       5px;
-    vertical-align: top;
+    tr {
+      td {
+        padding:       5px;
+        vertical-align: top;
+      }
+      td:first-child {
+        width: 90px;
+      }
+    }
   }
 
   .list_image {
