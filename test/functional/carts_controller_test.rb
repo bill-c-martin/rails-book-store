@@ -46,26 +46,4 @@ class CartsControllerTest < ActionController::TestCase
 
     assert_redirected_to carts_path
   end
-
-  test 'session contains no cart id by default' do
-    assert_empty session[:cart_id]
-  end
-
-  test 'session contains a valid Cart object after retrieving current_cart for the first time' do
-    cart = ApplicationController.current_cart
-    cart_validations cart
-  end
-
-  test 'session contains a valid Cart object when retrieving current cart after it has already been created' do
-    brand_new_cart = current_cart
-    current_cart = current_cart
-    cart_validations current_cart
-
-  end
-
-  def cart_validations(cart)
-    assert_instance_of Cart, cart, 'current_cart returns a valid cart object when called subsequent times'
-    assert_equal cart.id, session[:cart_id], 'Cart id is not the same as stored in the session'
-    assert_operator cart.id, :>, 0, 'cart id is not numeric'
-  end
 end
