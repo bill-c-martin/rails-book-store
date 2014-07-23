@@ -10,6 +10,13 @@
     border-bottom: 3px dotted #77d;
   }
 
+  p#counter {
+    float:right;
+    position: relative;
+    top: -54px;
+    font-size: 10px;
+  }
+
   /* An entry in the store catalog */
   .entry {
     overflow: auto;

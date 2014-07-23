@@ -3,6 +3,7 @@
 <% end %>
 
 <h1>Your Pragmatic Catalog</h1>
+<p id="counter">You have accessed this store: <%=pluralize @counter, 'times' %></p>
 
 <% @products.each do |product| %>
   <div class="entry">
