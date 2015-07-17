@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/Bill/Dropbox/development/projects/rails/depot","disabled":false}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/Dropbox/development/projects/rails/depot","disabled":false},"v-csc-2":{"id":"v-csc-2","guestpath":"/tmp/vagrant-chef/23236c4adc025d3c50bc3f11840b073c/cookbooks","hostpath":"D:/Dropbox/development/projects/rails/depot/cookbooks","disabled":false}}}
