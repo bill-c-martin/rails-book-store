@@ -7,6 +7,12 @@
 # Ignore bundler config
 /.bundle
 
+# Ignore vagrant meta files
+Vagrantfile
+Cheffile
+Cheffile.lock
+/.vagrant
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
