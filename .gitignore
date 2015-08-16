@@ -12,6 +12,7 @@ Vagrantfile
 Cheffile
 Cheffile.lock
 /.vagrant
+/cookbooks
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
