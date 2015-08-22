@@ -2,11 +2,11 @@ require 'test_helper'
 
 class ProductsControllerTest < ActionController::TestCase
   setup do
-    @product = products(:one)
+    @product = products(:gameOfThrones)
     @update = {
-      title: "bleh title!",
-      description: "fugoudaheeee",
-      image_url: 'bleh.jpg',
+      title: "A Storm of Swords!",
+      description: "2nd book in A Song of Ice and Fire",
+      image_url: 'a_song_of_ice_and_fire.jpg',
       price: 19.95
     }
   end
