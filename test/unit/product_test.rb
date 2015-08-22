@@ -14,34 +14,34 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test 'product title must be at least 10 characters in length' do
-    product = products(:ruby)
+    product = products(:gameOfThrones)
     product.title = '2short'
     assert product.invalid?
   end
 
   test 'product price must not be negative' do
-    product       = products(:ruby)
+    product       = products(:gameOfThrones)
     product.price = -1
     assert product.invalid?
     assert_equal ['must be greater than or equal to 0.01'], product.errors[:price]
   end
 
   test 'product price must not be zero' do
-    product       = products(:ruby)
+    product       = products(:gameOfThrones)
     product.price = 0
     assert product.invalid?
     assert_equal ['must be greater than or equal to 0.01'], product.errors[:price]
   end
 
   test 'product price must be positive' do
-    product       = products(:ruby)
+    product       = products(:gameOfThrones)
     product.price = 1
     assert product.valid?
   end
 
   test 'image url must be a valid gif, jpg, or png' do
 
-    product = products(:ruby)
+    product = products(:gameOfThrones)
     ok      = %w{ test.gif test.jpg test.png TEST.JPG TEST.Jpg http://a.b.c/x/y/z/test.gif }
     bad     = %w{ test.doc test.gif/more test.gif.more }
 
@@ -58,7 +58,7 @@ class ProductTest < ActiveSupport::TestCase
 
   test 'product is not valid without a unique title' do
     product = Product.new(
-      title:       products(:ruby).title,
+      title:       products(:gameOfThrones).title,
       description: 'yyy',
       price:       1,
       image_url:   'fred.gif'
