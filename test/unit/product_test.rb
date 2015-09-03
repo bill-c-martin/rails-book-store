@@ -13,9 +13,21 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:image_url].any?
   end
 
-  test 'product title must be at least 10 characters in length' do
+  test 'product title must be at least 3 characters in length' do
     product = products(:gameOfThrones)
-    product.title = '2short'
+    product.title = 'a'
+    assert product.invalid?
+    product.title = 'ab'
+    assert product.invalid?
+    product.title = 'abc'
+    assert product.valid?
+  end
+
+  test 'product title must be no more than 60 characters in length' do
+    product = products(:gameOfThrones)
+    product.title = 60.times.map{[*'a'..'z'].sample}.join
+    assert product.valid?
+    product.title = 61.times.map{[*'a'..'z'].sample}.join
     assert product.invalid?
   end
 
@@ -37,6 +49,25 @@ class ProductTest < ActiveSupport::TestCase
     product       = products(:gameOfThrones)
     product.price = 1
     assert product.valid?
+  end
+
+  test 'product price must not be $100 or more' do
+    product       = products(:gameOfThrones)
+    product.price = 99;
+    assert product.valid?
+    product.price = 100;
+    assert product.invalid?
+  end
+
+  test 'image url must be unique' do
+    product = Product.new(
+      title: "Some valid title",
+      description: "Some valid description",
+      price: 1,
+      image_url: products(:gameOfThrones).image_url
+    )
+
+    assert product.invalid?
   end
 
   test 'image url must be a valid gif, jpg, or png' do
