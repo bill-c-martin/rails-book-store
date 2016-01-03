@@ -29,6 +29,7 @@ I'd like to eventually drop the stock ecommerce aspect of it and turn it into a 
 
 ##Todo
 * Finish the tutorials from the book
+* Change the placeholder (potential euphemism for: ripoff) name & logo ;)
 * Remove the ecommerce/cart functionality
 * Import reviews & ratings
 * Calculate average ratings
