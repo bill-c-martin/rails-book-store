@@ -24,3 +24,10 @@ I'd like to eventually drop the stock ecommerce aspect of it and turn it into a 
 * Sass/SCSS
 * jQuery
 * Capistrano
+
+##Todo
+* Finish the tutorials from the book
+* Remove the ecommerce/cart functionality
+* Import reviews & ratings
+* Calculate average ratings
+* Implement suggestion algorithm
