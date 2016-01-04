@@ -8,7 +8,7 @@ class LineItemsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:line_items)
+    assert_not_nil assigns :line_items
   end
 
   test "should get new" do
@@ -17,11 +17,23 @@ class LineItemsControllerTest < ActionController::TestCase
   end
 
   test "should create line_item" do
-    assert_difference('LineItem.count') do
+    assert_difference 'LineItem.count' do
       post :create, product_id: products(:catsCradle).id
     end
 
-    assert_redirected_to cart_path(assigns(:line_item).cart)
+    assert_redirected_to store_path
+  end
+
+  test "should create line_item via ajax" do
+    assert_difference 'LineItem.count' do
+      xhr :post, :create, product_id: products(:theNameOfTheWind).id
+    end
+
+    assert_response :success
+    assert_select_jquery(:html, '#cart') do
+      # breaks if product title contains apostrophes and other html entities
+      assert_select 'tr#current_item td', /#{products(:theNameOfTheWind).title}/
+    end
   end
 
   test "should show line_item" do

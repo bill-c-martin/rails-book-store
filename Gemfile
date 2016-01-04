@@ -39,5 +39,6 @@ gem 'jquery-ui-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
+group :test do
+  gem 'pry-byebug'
+end

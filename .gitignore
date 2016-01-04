@@ -28,3 +28,6 @@ bootstrap.sh
 /.idea/tasks.xml
 .DS_Store
 .idea/
+
+# byebug debugger logs
+.byebug_history
