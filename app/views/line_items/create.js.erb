@@ -1,0 +1,9 @@
+if($('#cart tr').length == 1) {
+  $('#cart').slideDown();
+}
+
+$('#cart').html("<%=j render @cart %>");
+
+$('#current_item')
+  .css({'background-color':'#9E8334'})
+  .animate({'background-color':'transparent'}, 1000);
