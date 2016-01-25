@@ -16,7 +16,7 @@
     <div id="side">
       <div id="cart">
         <% if @cart %>
-          <% hide_if(@cart.line_items.empty?, id: 'cart') do %>
+          <%= hide_if(@cart.line_items.empty?, id: 'cart') do %>
             <%= render @cart %>
           <% end %>
         <% end %>
