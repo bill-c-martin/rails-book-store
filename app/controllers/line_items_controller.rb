@@ -1,4 +1,16 @@
 class LineItemsController < ApplicationController
+
+  # PUT /line_items/:id/decrement
+  # PUT /line_items/:id/decrement.json
+  def decrement
+    @line_item = LineItem.find(params[:id])
+    
+    if @line_item.decrement!(:quantity)
+      flash[:notice] = "Quantity decreased to #{@line_item.quantity}"
+      redirect_to store_path
+    end
+  end
+
   # GET /line_items
   # GET /line_items.json
   def index
