@@ -7,14 +7,16 @@ class LineItemsController < ApplicationController
 
     if @line_item.quantity > 1
       @line_item.decrement!(:quantity)
-      message = "Quantity of decreased to #{@line_item.quantity}"
+      flash[:notice] = "Quantity of decreased to #{@line_item.quantity}"
     else
       @line_item.destroy
-      message = "Product removed from cart"
+      flash[:notice] = "Product removed from cart"
     end
 
-    flash[:notice] = message
-    redirect_to store_path
+    respond_to do |format|
+      format.html { redirect_to store_path }
+      format.js { @cart = current_cart, @current_item = @line_item }
+    end
   end
 
   # GET /line_items
