@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
 
-  # PUT /line_items/:id/decrement
-  # PUT /line_items/:id/decrement.json
+  # POST /line_items/:id/decrement
+  # POST /line_items/:id/decrement.json
   def decrement
     @line_item = LineItem.find(params[:id])
 
