@@ -12,6 +12,16 @@
  *= require_tree .
  */
 
+body {
+  background: #111 url('/assets/backgrounds/woodgrain.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 960px;
+  margin: auto;
+}
+
 #banner {
   background: #141414;
   padding: 15px 0 15px 10px;
