@@ -12,6 +12,12 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    item = LineItem.new
+    item.build_cart
+    item.product = products(:gameOfThrones)
+    item.save!
+    session[:cart_id] = item.cart.id
+
     get :new
     assert_response :success
   end
