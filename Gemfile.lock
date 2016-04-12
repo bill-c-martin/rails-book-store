@@ -123,6 +123,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   coffee-rails (~> 3.2.1)
   jquery-rails
   jquery-ui-rails

@@ -16,6 +16,22 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should decrement line_item" do
+    post :decrement, id: @line_item
+    assert_redirected_to store_path
+    assert_equal(assigns(:line_item).quantity, line_items(:one).quantity)
+  end
+
+  test "should decrement line_item via ajax" do
+    xhr :put, :decrement, id: @line_item
+
+    assert_select_jquery(:html, '#cart') do
+      # breaks if product title contains apostrophes and other html entities
+      # look for <td>1x</td> after the 2 line items is decremented to just 1
+      assert_select 'tr#current_item td', /1&times;/
+    end
+  end
+
   test "should create line_item" do
     assert_difference 'LineItem.count' do
       post :create, product_id: products(:catsCradle).id
