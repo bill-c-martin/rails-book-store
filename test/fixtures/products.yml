@@ -1,18 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 gameOfThrones:
+  id: 1
   title: A Game of Thrones
   description: There is only one god and his name is Death. And there is only one thing we say to Death, "Not today."
   image_url: a_game_of_thrones.jpg
   price: 9.99
 
 catsCradle:
+  id: 2
   title: Cat's Cradle
   description: Tiger got to hunt, bird got to fly; <br/>Man got to sit and wonder 'why, why, why?'<br/>Tiger got to sleep, bird got to land;<br/>Man got to tell himself he understand
   image_url: cats_cradle.jpg
   price: 10.99
 
 theNameOfTheWind:
+  id: 3
   title: The Name of the Wind
   description: The day we fret about the future is the day we leave our childhood behind.
   image_url: name_of_the_wind.jpg
