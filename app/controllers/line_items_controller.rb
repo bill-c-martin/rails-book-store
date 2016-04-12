@@ -1,4 +1,24 @@
 class LineItemsController < ApplicationController
+
+  # POST /line_items/:id/decrement
+  # POST /line_items/:id/decrement.json
+  def decrement
+    @line_item = LineItem.find(params[:id])
+
+    if @line_item.quantity > 1
+      @line_item.decrement!(:quantity)
+      flash[:notice] = "Quantity of decreased to #{@line_item.quantity}"
+    else
+      @line_item.destroy
+      flash[:notice] = "Product removed from cart"
+    end
+
+    respond_to do |format|
+      format.html { redirect_to store_path }
+      format.js { @cart = current_cart, @current_item = @line_item }
+    end
+  end
+
   # GET /line_items
   # GET /line_items.json
   def index
