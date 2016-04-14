@@ -24,7 +24,9 @@ I'd like to eventually drop the stock ecommerce aspect of it and turn it into a 
 * Rails 3.2.22
 * SQLite
 * Sass/SCSS
+* JavaScript
 * jQuery
+* CoffeeScript
 * Capistrano
 
 ##Todo
