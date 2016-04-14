@@ -12,8 +12,20 @@
  *= require_tree .
  */
 
+@import "_config.css.scss";
+
+body {
+  background: $base_color url('/assets/backgrounds/woodgrain.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 960px;
+  margin: auto;
+}
+
 #banner {
-  background: #141414;
+  background: $base_color;
   padding: 15px 0 15px 10px;
 
   img {
@@ -21,20 +33,20 @@
 }
 
 #notice {
-  color: #3c763d !important;
-  border: 1px solid #aba;
+  color: $notice_color !important;
+  border: 1px solid $notice_border;
   padding: 2em;
   margin-bottom: 2em;
-  background-color: #dff0d8;
+  background-color: $notice_background;
 }
 
 #columns {
-  background: #992022;
+  background: $brand_color;
 
   #main {
     margin-left: 17em;
     padding: 1em;
-    background: white;
+    background: $white;
   }
 
   #side {
@@ -52,7 +64,7 @@
 
     #cart {
       font-size: smaller;
-      color:     white;
+      color:     $white;
 
       table {
         margin-bottom: 10px;
@@ -81,20 +93,55 @@
         list-style: none;
 
         a {
-          color: #D6C288;
+          color: $brand_accent;
           font-size: medium;
           text-decoration: none;
 
           &:hover {
-            color: #D6C288;
+            color: $brand_accent;
             background-color: transparent;
           text-decoration: underline;
           }
           &:visited {
-            color: #D6C288;
+            color: $brand_accent;
           }
         }
       }
+    }
+  }
+}
+
+.depot_form {
+  fieldset {
+    background: $off-white;
+    legend {
+      color: $off-white;
+      background: $base_color;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+  }
+
+  form {
+    label {
+      width: 5em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    select, textarea, input {
+      margin-left: 0.5em;
+    }
+
+    .submit {
+      margin-left: 4em;
+    }
+
+    br {
+      display: none;
     }
   }
 }
