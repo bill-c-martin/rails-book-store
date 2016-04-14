@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  address: MyText
-  email: MyString
-  pay_type: MyString
+  name: Bill Martin
+  address: 80 Sentinel Court
+  email: bitterpeace@gmail.com
+  pay_type: Check
 
 two:
-  name: MyString
-  address: MyText
-  email: MyString
-  pay_type: MyString
+  name: John Smith
+  address: 123 some street
+  email: fake@email.com
+  pay_type: Credit Card
