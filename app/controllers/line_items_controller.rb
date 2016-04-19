@@ -26,7 +26,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @line_items }
+      format.json { render :json => @line_items }
     end
   end
 
@@ -37,7 +37,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @line_item }
+      format.json { render :json => @line_item }
     end
   end
 
@@ -48,7 +48,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @line_item }
+      format.json { render :json => @line_item }
     end
   end
 
@@ -70,10 +70,10 @@ class LineItemsController < ApplicationController
         session[:counter] = 0
         format.html { redirect_to store_url}
         format.js   { @current_item = @line_item }
-        format.json { render json: @line_item, status: :created, location: @line_item }
+        format.json { render :json => @line_item, :status => :created, :location => @line_item }
       else
-        format.html { render action: "new" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @line_item.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -85,11 +85,11 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to @line_item, :notice => 'Line item was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @line_item.errors, :status => :unprocessable_entity }
       end
     end
   end

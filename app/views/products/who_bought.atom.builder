@@ -6,7 +6,7 @@ atom_feed do |feed|
     feed.entry(order) do |entry|
       entry.title = "Order #{order.id}"
 
-      entry.summary type: 'xhtml' do |xhtml|
+      entry.summary :type => 'xhtml' do |xhtml|
         xhtml.p "Shipped to #{order.address}"
 
         xhtml.table do
@@ -25,7 +25,7 @@ atom_feed do |feed|
           end
 
           xhtml.tr do
-            xhtml.th 'total', colspan: 2
+            xhtml.th 'total', :colspan => 2
             xhtml.th number_to_currency \
               order.line_items.map(&:total_price).sum
           end
