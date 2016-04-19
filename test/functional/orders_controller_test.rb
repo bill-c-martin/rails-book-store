@@ -30,30 +30,44 @@ class OrdersControllerTest < ActionController::TestCase
 
   test "should create order" do
     assert_difference('Order.count') do
-      post :create, order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
+      post :create,
+           :order => {
+               :address => @order.address,
+               :email => @order.email,
+               :name => @order.name,
+               :payment_type_id => @order.payment_type_id
+           }
     end
 
     assert_redirected_to store_path
   end
 
   test "should show order" do
-    get :show, id: @order
+    get :show, :id => @order
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @order
+    get :edit, :id => @order
     assert_response :success
   end
 
   test "should update order" do
-    put :update, id: @order, order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
+    put :update,
+        :id => @order,
+        :order => {
+          :address => @order.address,
+          :email => @order.email,
+          :name => @order.name,
+          :payment_type_id => @order.payment_type_id
+        }
+
     assert_redirected_to order_path(assigns(:order))
   end
 
   test "should destroy order" do
     assert_difference('Order.count', -1) do
-      delete :destroy, id: @order
+      delete :destroy, :id => @order
     end
 
     assert_redirected_to orders_path
