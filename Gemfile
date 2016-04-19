@@ -44,3 +44,5 @@ gem 'byebug'
 group :test do
   gem 'pry-byebug'
 end
+
+gem 'will_paginate', '~> 3.0'
