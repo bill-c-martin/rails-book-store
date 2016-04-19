@@ -5,4 +5,8 @@ module ApplicationHelper
     end
     content_tag("div", attributes, &block)
   end
+
+  def checkout_button_disabled?
+    current_page?(:controller => 'orders', :action => 'new')
+  end
 end
