@@ -4,10 +4,10 @@ one:
   name: Bill Martin
   address: 80 Sentinel Court
   email: bitterpeace@gmail.com
-  pay_type: Check
+  payment_type_id: 1
 
 two:
   name: John Smith
   address: 123 some street
   email: fake@email.com
-  pay_type: Credit Card
+  payment_type_id: 2

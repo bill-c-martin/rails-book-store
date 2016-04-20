@@ -6,7 +6,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @carts }
+      format.json { render :json => @carts }
     end
   end
 
@@ -17,11 +17,11 @@ class CartsController < ApplicationController
       @cart = Cart.find(params[:id])
     rescue
       logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to store_url, notice: 'Cart does not exist'
+      redirect_to store_url, :notice => 'Cart does not exist'
     else
       respond_to do |format|
         format.html # show.html.erb
-        format.json { render json: @cart }
+        format.json { render :json => @cart }
       end
     end
   end
@@ -33,7 +33,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @cart }
+      format.json { render :json => @cart }
     end
   end
 
@@ -49,11 +49,11 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
-        format.json { render json: @cart, status: :created, location: @cart }
+        format.html { redirect_to @cart, :notice => 'Cart was successfully created.' }
+        format.json { render :json => @cart, :status => :created, :location => @cart }
       else
-        format.html { render action: "new" }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @cart.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -65,11 +65,11 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.update_attributes(params[:cart])
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html { redirect_to @cart, :notice => 'Cart was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @cart.errors, :status => :unprocessable_entity }
       end
     end
   end

@@ -61,10 +61,10 @@ class ProductTest < ActiveSupport::TestCase
 
   test 'image url must be unique' do
     product = Product.new(
-      title: "Some valid title",
-      description: "Some valid description",
-      price: 1,
-      image_url: products(:gameOfThrones).image_url
+      :title => "Some valid title",
+      :description => "Some valid description",
+      :price => 1,
+      :image_url => products(:gameOfThrones).image_url
     )
 
     assert product.invalid?
@@ -89,10 +89,10 @@ class ProductTest < ActiveSupport::TestCase
 
   test 'product is not valid without a unique title' do
     product = Product.new(
-      title:       products(:gameOfThrones).title,
-      description: 'yyy',
-      price:       1,
-      image_url:   'fred.gif'
+      :title =>       products(:gameOfThrones).title,
+      :description => 'yyy',
+      :price =>       1,
+      :image_url =>   'fred.gif'
     )
 
     assert product.invalid?
