@@ -83,6 +83,9 @@ class LineItemsController < ApplicationController
   def update
     @line_item = LineItem.find(params[:id])
 
+    # remove product_id which the user is not allowed to update
+    params[:line_item].delete(:product_id)
+
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])
         format.html { redirect_to @line_item, :notice => 'Line item was successfully updated.' }
