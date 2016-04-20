@@ -17,13 +17,13 @@ class LineItemsControllerTest < ActionController::TestCase
   end
 
   test "should decrement line_item" do
-    post :decrement, id: @line_item
+    post :decrement, :id => @line_item
     assert_redirected_to store_path
     assert_equal(assigns(:line_item).quantity, line_items(:one).quantity)
   end
 
   test "should decrement line_item via ajax" do
-    xhr :put, :decrement, id: @line_item
+    xhr :put, :decrement, :id => @line_item
 
     assert_select_jquery(:html, '#cart') do
       # breaks if product title contains apostrophes and other html entities
@@ -34,7 +34,7 @@ class LineItemsControllerTest < ActionController::TestCase
 
   test "should create line_item" do
     assert_difference 'LineItem.count' do
-      post :create, product_id: products(:catsCradle).id
+      post :create, :product_id => products(:catsCradle).id
     end
 
     assert_redirected_to store_path
@@ -42,7 +42,7 @@ class LineItemsControllerTest < ActionController::TestCase
 
   test "should create line_item via ajax" do
     assert_difference 'LineItem.count' do
-      xhr :post, :create, product_id: products(:theNameOfTheWind).id
+      xhr :post, :create, :product_id => products(:theNameOfTheWind).id
     end
 
     assert_response :success
@@ -53,25 +53,37 @@ class LineItemsControllerTest < ActionController::TestCase
   end
 
   test "should show line_item" do
-    get :show, id: @line_item
+    get :show, :id => @line_item
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @line_item
+    get :edit, :id => @line_item
     assert_response :success
   end
 
   test "should update line_item" do
-    put :update, id: @line_item, line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id }
+    put :update, :id => @line_item, :line_item => { :cart_id => @line_item.cart_id, :product_id => @line_item.product_id }
     assert_redirected_to line_item_path(assigns(:line_item))
   end
 
   test "should destroy line_item" do
     assert_difference('LineItem.count', -1) do
-      delete :destroy, id: @line_item
+      delete :destroy, :id => @line_item
     end
 
     assert_redirected_to line_items_path
+  end
+
+  test "should raise exception on line item mass update" do
+    params = {
+        :line_item => {
+            :cart_id => @line_item.cart_id,
+            :product_id => @line_item.product_id
+        }
+    }
+    assert_raise ActiveModel::MassAssignmentSecurity::Error do
+      @line_item.update_attributes(params[:line_item])
+    end
   end
 end
