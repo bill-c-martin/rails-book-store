@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   name: Bill Martin
   address: 80 Sentinel Court
   email: bitterpeace@gmail.com
   payment_type_id: 1
 
 two:
+  id: 2
   name: John Smith
   address: 123 some street
   email: fake@email.com
