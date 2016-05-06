@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to store_url, :notice => "Your cart is empty"
+      redirect_to store_url, :notice => 'Your cart is empty'
       return
     end
 
@@ -61,7 +61,7 @@ class OrdersController < ApplicationController
         format.json { render :json => @order, :status => :created, :location => @order }
       else
         @cart = current_cart
-        format.html { render :action => "new" }
+        format.html { render :action => 'new' }
         format.json { render :json => @order.errors, :status => :unprocessable_entity }
       end
     end
@@ -77,7 +77,7 @@ class OrdersController < ApplicationController
         format.html { redirect_to @order, :notice => 'Order was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => 'edit' }
         format.json { render :json => @order.errors, :status => :unprocessable_entity }
       end
     end
