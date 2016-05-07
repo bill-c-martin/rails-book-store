@@ -13,7 +13,6 @@ Depot::Application.routes.draw do
       post 'decrement'
     end
   end
-  get 'store/index'
   resources :products do
     get :who_bought, on:  :member
   end
