@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  skip_before_filter :authorize, only: :create
 
   # POST /line_items/:id/decrement
   # POST /line_items/:id/decrement.json
