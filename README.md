@@ -49,4 +49,4 @@ This project ended up with 1400 lines of code written, half of which were automa
     +----------------------+-------+-------+---------+---------+-----+-------+
     | Total                |  1400 |  1077 |      39 |      57 |   1 |    16 |
     +----------------------+-------+-------+---------+---------+-----+-------+
-      Code LOC: 529     Test LOC: 548     Code to Test Ratio: 1:1.0```
+      Code LOC: 529     Test LOC: 548     Code to Test Ratio: 1:1.0
