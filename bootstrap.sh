@@ -29,13 +29,16 @@ install 'ExecJS runtime' nodejs
 install Git git
 
 # apache
-install apache2
+install Apache2 apache2
 
 # curl
-install curl
+install Curl curl
 
 # MySQL
-install libmysqlclient-dev mysql-server
+install 'MySQL Client' libmysqlclient-dev 
+
+# MySQL Server
+install 'MySQL Server' mysql-server
 
 # memcache
 #install memcached memcached
