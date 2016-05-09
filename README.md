@@ -2,7 +2,7 @@
 
 Depot is an online book store that was built by following the book "Agile Web Development with Rails, Fourth Edition". 
 
-It was a follow-along practice project for learning Ruby/Rails concepts, some of which are the optional enhancements/exercises at the end of each section in the book, and the rest are my own enhancements which I did to further reinforce knowledge learned in the book and online.
+It's a follow-along practice project for learning Ruby/Rails concepts, some of which are the optional enhancements/exercises at the end of each section in the book, and the rest are my own enhancements which I did to further reinforce knowledge learned in the book and online.
 
 ## Key Concepts
 
