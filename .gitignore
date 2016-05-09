@@ -7,13 +7,8 @@
 # Ignore bundler config
 /.bundle
 
-# Ignore vagrant meta files
-Vagrantfile
-Cheffile
-Cheffile.lock
-/.vagrant
-bootstrap.sh
-/cookbooks
+# Ignore vagrant metadata
+/.vagrant/
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
