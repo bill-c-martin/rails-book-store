@@ -1,4 +1,4 @@
-##Introduction
+## Introduction
 
 Depot is an online book store that was built by following the book "Agile Web Development with Rails, Fourth Edition". 
 
